@@ -12,6 +12,7 @@ public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
     ProductsPage productsPage;
+    CartPage cartPage;
 
     @BeforeMethod
     public void setup() {
@@ -25,6 +26,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
         loginPage = new LoginTest(driver);
         productsPage = new ProductsTest(driver);
+        cartPage = new cartPage(driver);
     }
 
     @AfterMethod
