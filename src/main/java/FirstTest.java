@@ -47,25 +47,25 @@ equals()*/
 
     @Test
     public void checkIfatNubmer() {
-       String actualResult = trialCode(9);
-       assertEquals(actualResult, "I", "Ожидалось другое значение");
+        String actualResult = trialCode(9);
+        assertEquals(actualResult, "I", "Ожидалось другое значение");
     }
 
     @Test
     public void checkIfatFiveNubmer() {
-       String actualResult = trialCode(25);
-       assertEquals(actualResult, "F", "Ожидалось другое значение");
+        String actualResult = trialCode(25);
+        assertEquals(actualResult, "F", "Ожидалось другое значение");
     }
 
     @Test
     public void checkIfatBothNubmer() {
-       String actualResult = trialCode(15);
-       assertEquals(actualResult, "A", "Ожидалось другое значение");
+        String actualResult = trialCode(15);
+        assertEquals(actualResult, "A", "Ожидалось другое значение");
     }
 
     @Test
     public void checkIfatNoneNubmer() {
-       String actualResult = trialCode(19);
-       assertEquals(actualResult, "T", "Ожидалось другое значение");
+        String actualResult = trialCode(19);
+        assertEquals(actualResult, "T", "Ожидалось другое значение");
     }
 }

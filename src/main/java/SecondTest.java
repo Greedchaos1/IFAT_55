@@ -7,22 +7,22 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class SecondTest {
-     @Test
-     public void checkZipCodeInput() throws InterruptedException {
-         //открыть браузер
-         //зайти на сайт
+    @Test
+    public void checkZipCodeInput() throws InterruptedException {
+        //открыть браузер
+        //зайти на сайт
 
-         WebDriver browser = new ChromeDriver();
-         browser.get("https://www.sharelane.com/cgi-bin/register.py");
-         browser.findElement(By.cssSelector("[name='zip_code']")).sendKeys("1234");
-         browser.findElement(By.cssSelector("[value='Continue']")).click();
+        WebDriver browser = new ChromeDriver();
+        browser.get("https://www.sharelane.com/cgi-bin/register.py");
+        browser.findElement(By.cssSelector("[name='zip_code']")).sendKeys("1234");
+        browser.findElement(By.cssSelector("[value='Continue']")).click();
 
         boolean isErrorAppear = browser.findElement(By.cssSelector(".error_message")).isDisplayed();
         assertTrue(isErrorAppear,"Error message does not appear");
 
-         String errorMessageText = browser.findElement(By.cssSelector(".error_message")).getText();
-         assertEquals(errorMessageText, "Oops, error on page. ZIP code should have 5 digits");
-         browser.quit();
+        String errorMessageText = browser.findElement(By.cssSelector(".error_message")).getText();
+        assertEquals(errorMessageText, "Oops, error on page. ZIP code should have 5 digits");
+        browser.quit();
     }
     @Test
     public void checkZipCodeFiveDigitInput() throws InterruptedException {
@@ -39,4 +39,4 @@ public class SecondTest {
 
         browser.quit();
     }
- }
+}
