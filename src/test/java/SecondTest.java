@@ -17,8 +17,9 @@ public class SecondTest {
          browser.findElement(By.cssSelector("[name='zip_code']")).sendKeys("1234");
          browser.findElement(By.cssSelector("[value='Continue']")).click();
 
-        boolean isErrorAppear = browser.findElement(By.cssSelector(".error_message")).isDisplayed();
-        assertTrue(isErrorAppear,"Error message does not appear");
+        boolean isErrorAppear;
+         isErrorAppear = browser.findElement(By.cssSelector(".error_message")).isDisplayed();
+         assertTrue(isErrorAppear,"Error message does not appear");
 
          String errorMessageText = browser.findElement(By.cssSelector(".error_message")).getText();
          assertEquals(errorMessageText, "Oops, error on page. ZIP code should have 5 digits");
@@ -34,7 +35,8 @@ public class SecondTest {
         browser.findElement(By.cssSelector("[name='zip_code']")).sendKeys("12345");
         browser.findElement(By.cssSelector("[value='Continue']")).click();
 
-        boolean isRegisterBtnExist = browser.findElement(By.cssSelector("[value='Register']")).isDisplayed();
+        boolean isRegisterBtnExist;
+        isRegisterBtnExist = browser.findElement(By.cssSelector("[value='Register']")).isDisplayed();
         assertTrue(isRegisterBtnExist,"Register btn is not visible");
 
         browser.quit();

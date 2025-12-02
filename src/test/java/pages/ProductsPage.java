@@ -14,7 +14,6 @@ public class ProductsPage extends BasePage {
     private static final String DATA_TEST_PATTERN =
             "[data-test='%s']";
 
-
     By cartBadge = By.xpath("//*[@data-test='shopping-cart-badge']");
 
     public ProductsPage(WebDriver driver) {
@@ -22,7 +21,8 @@ public class ProductsPage extends BasePage {
     }
 
     public void switchToCart() {
-    }//добавить тело метода
+        driver.findElement(cartBadge).click();
+    }
 
     public void addToCart(final String goodsName) {
         // By addGoodsToCart = By.xpath(String.format(ADD_TO_CART_BUTTON_PATTERN, "Sauce Labs Bike Light"));
