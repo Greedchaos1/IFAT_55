@@ -3,10 +3,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.CartPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class BaseTest {
     WebDriver driver;
@@ -19,18 +20,18 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--guest");
-        //  options.addArguments("start-maximized");
-        //   options.addArguments("--headless");
+        options.addArguments("start-maximized");
+        options.addArguments("--headless");
 
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
-        loginPage = new LoginTest(driver);
-        productsPage = new ProductsTest(driver);
-        cartPage = new cartPage(driver);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+        loginPage = new LoginPage(driver);
+        productsPage = new ProductsPage(driver);
+        cartPage = new CartPage(driver);
     }
 
     @AfterMethod
     public void close() {
-        //  driver.quit();
+        driver.quit();
     }
 }

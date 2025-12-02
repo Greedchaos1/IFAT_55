@@ -14,7 +14,7 @@ public class CartTest extends BaseTest {
         // loginPage.open("cart.html");
         productsPage.switchToCart();
 
-        cartPage.isPageLoaded(pageTitle: "Your Cart");
+        cartPage.isPageLoaded( "Your Cart");
         System.out.println(cartPage.getProductsNames() + "!!!!!!!!!!!!!!!!!!!!!!!");
 
         assertEquals(cartPage.getProductsNames().size(), 2);

@@ -21,10 +21,8 @@ public class ProductsPage extends BasePage {
         super(driver);
     }
 
-    public boolean isPageLoaded(final String pageTitle) {
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(pageTitle));
-        return driver.findElement(By.xpath(TEXT_LOCATOR_PATTERN.formatted(pageTitle))).isDisplayed();
-    }
+    public void switchToCart() {
+    }//добавить тело метода
 
     public void addToCart(final String goodsName) {
         // By addGoodsToCart = By.xpath(String.format(ADD_TO_CART_BUTTON_PATTERN, "Sauce Labs Bike Light"));
