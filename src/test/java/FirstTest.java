@@ -4,6 +4,31 @@ import static org.testng.Assert.assertEquals;
 
 public class FirstTest {
 
+    public static void main(String[] args) {
+
+        String str1 = "Hello";
+        String str2 = "Hello";
+        String str3 = "Hello";
+        String str4 = "Hello";
+        String str5 = "Hello";
+        String str9 = new String("Hello");
+
+        System.out.println(str2 == str3);
+        System.out.println(str2 == str9);
+        System.out.println(str2.equals(str9));
+        System.out.println(str2.equals(str3));
+    }
+/*
+=
+==
+equals()*/
+
+
+
+
+
+
+
     //КРАТНО 3, ВОЗВРАЩАТЬ "I"
     //КРАТНО 5, ВОЗВРАЩАТЬ "F"
     //КРАТНО 3 И 5, ВОЗВРАЩАТЬ "A"
