@@ -5,20 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CartPage extends BasePage {
-
-    By cartPr = By.cssSelector(".inventory_item_name");
+    By productsNames = By.cssSelector(".inventory_item_name");
 
     public CartPage(WebDriver driver) {
         super(driver);
     }
 
     public ArrayList<String> getProductsNames() {
+        List<WebElement> allProductsNames = driver.findElements(productsNames);
         ArrayList<String> names = new ArrayList<>();
-        for (WebElement product : driver.findElements(cartPr)) {
+        for (WebElement product : allProductsNames) {
             names.add(product.getText());
         }
         return names;
     }
+
 }
